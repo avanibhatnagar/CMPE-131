@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  get 'admin/index'
-  get 'session/new'
-  get 'session/create'
-  get 'session/destroy'
-  resources :users
+  get 'home', to: 'application#home'
+  get 'test', to: 'application#test'
+  get 'demo', to: 'application#demo'
+  get 'users/new', to: 'users#new'
+  root 'application#home'
 
-  get 'admin' => 'admin#index'
-  controller :session do
-  	get 'login' => :new
-  	get 'login' => :create
-  	get 'destroy' => :destroy
-  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
