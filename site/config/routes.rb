@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'calendar/new'
+  resources :calendars
+  get 'task/new'
+  resources :task
+
+
   #get 'admin/index'
   #get 'sessions/new'
   get 'sessions/create'
