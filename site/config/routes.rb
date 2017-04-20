@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   resources :users
 
   get 'admin' => 'admin#index'
+  get 'conversations/index'
+  resources :conversations do
+    resources :messages
+  end
+  
+
   controller :sessions do
     get  'login' => :new
     post 'login' => :create
