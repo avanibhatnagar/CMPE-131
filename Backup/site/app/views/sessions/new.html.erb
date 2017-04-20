@@ -1,0 +1,46 @@
+
+<head>
+<%= stylesheet_link_tag "admin" %>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/admin.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="light_theme  fixed_header left_nav_fixed">
+<div class="wrapper">
+  <!--\\\\\\\ wrapper Start \\\\\\-->
+  <div class="login_page">
+  <div class="login_content">
+  <div class="panel-heading border login_heading">sign in now</div> 
+ <%= form_tag('/login', class: "form-horizontal") do %>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= text_field_tag :name, params[:name], class: 'form-control', placeholder: 'Username' %>
+        </div>
+      </div>
+      <div class="form-group">
+        
+        <div class="col-sm-10">
+          <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: 'password' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class=" col-sm-10">
+          <div class="checkbox checkbox_margin">
+            <label class="lable_margin">
+              <p class="pull-left"></p></label>
+              <%= submit_tag "Login", class: 'btn btn-default pull-right' %>
+              </a></div>
+        </div>
+      </div>   
+  <% end %>
+ </div>
+  </div>
+</div>
+<!--\\\\\\\ wrapper end\\\\\\-->
+
+<script src="js/jquery-2.1.0.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+</body>
+</html>
