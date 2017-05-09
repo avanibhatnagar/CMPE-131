@@ -1,0 +1,15 @@
+<h1> Help Forum </h1>
+<br></br> 
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <%= post.text %>
+<% end %>
+
+
+<br></br>  
+
+<br></br> 
+
+<br></br> 
+<%= link_to "New Topic", new_post_path %>
+

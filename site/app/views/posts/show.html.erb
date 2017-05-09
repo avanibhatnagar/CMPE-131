@@ -1,0 +1,23 @@
+<h2>
+<p id="notice"><%= notice %></p>
+  <strong>Title:</strong>
+  <strong><%= @post.title %></strong>
+</h2>
+
+
+<p>
+  <%= @post.text %>
+</p>
+
+
+<% @post.comments.each do |comment| %>
+<strong>Replies</strong>
+	<p><%= comment.text %></p>
+<% end %>
+
+<%= form_for [@post, @post.comments.build] do |f| %>
+	<p><%= f.text_area :text, :size => '60x5' %><br></br>
+		<%= f.submit "submit" %></p>
+<% end %>
+
+<%= link_to 'Back', posts_path %>
