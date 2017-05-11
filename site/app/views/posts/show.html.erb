@@ -1,20 +1,23 @@
+ <div style="border-bottom: 1px solid grey; margin-top:10px" >
 <h2>
 <p id="notice"><%= notice %></p>
   <strong>Title:</strong>
   <strong><%= @post.title %></strong>
 </h2>
+</div>
 
-
+ <div style="border-bottom: 1px solid grey; margin-top:10px" >
 <p>
-  <%= @post.text %>
+<%= @post.text %>
 </p>
+</div>
 
-
+<strong><u>Replies</u></strong>
+<div style="border-bottom: 1px solid grey; margin-top:10px" >
 <% @post.comments.each do |comment| %>
-<strong>Replies</strong>
 	<p><%= comment.text %></p>
 <% end %>
-
+</div>
 <%= form_for [@post, @post.comments.build] do |f| %>
 	<p><%= f.text_area :text, :size => '60x5' %><br></br>
 		<%= f.submit "submit" %></p>

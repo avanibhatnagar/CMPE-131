@@ -1,7 +1,17 @@
-<div class="ui segment">
-  <h3>Mailbox</h3>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
-  <div class="ui list">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+<div class="ui segment ">
+  <div class="table-inverse" style="padding-left:10px">
+  <h3>Mailbox</h3>
+  </div>
+  <div class="ui list"  style="padding-left:30px">
+
     <div class="item">
       <% @conversations.each do |conversation| %>
         <% if conversation.sender_id == session[:user_id] || conversation.recipient_id == session[:user_id] %>
@@ -19,14 +29,24 @@
 
 
 <div class="ui segment">
+    <div class="table-inverse" style="padding-left:10px ;margin-top:30px;">
+
   <h3>All Users</h3>
+    </div>
+
   <div class="ui list">
     <% @users.each do |user| %>
+           <div  style="border-bottom: 1px solid grey; margin-top:10px; padding-left:30px" >
+
       <% if user.id != session[:user_id] %>
       <div class="item">
         <%= user.name %> <%= link_to 'Message me!', conversations_path(sender_id: session[:user_id], recipient_id: user.id), method:'post'%>
       </div>
       <% end %>
+    </div>
     <% end %>
   </div>
 </div>
+
+<br></br>
+<a class="btn btn-info" role="button" href="/admin">User Page</a>

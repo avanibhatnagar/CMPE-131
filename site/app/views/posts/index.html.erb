@@ -1,15 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+<div style="padding:10px" class="table-inverse">
 <h1> Help Forum </h1>
-<br></br> 
+</div>
+
+<div style="margin-left:40px;margin-top:50px">
 <% @posts.each do |post| %>
-  <h2><%= link_to post.title, post %></h2>
+ <div style="border-bottom: 1px solid grey; margin-top:30px" >
+ <h2><%= link_to post.title, post %></h2>
+  </div>
+
   <%= post.text %>
 <% end %>
-
+</div>
 
 <br></br>  
 
-<br></br> 
 
-<br></br> 
-<%= link_to "New Topic", new_post_path %>
+<a class="btn btn-info" role="button" href="posts/new">New Post</a>
 
+<a class="btn btn-info" role="button" href="admin">User Page</a>
